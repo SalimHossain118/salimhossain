@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState } from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import { Nextlogo } from "../../assets/index.js";
 import { navLinksdata } from "./../../constants/index";
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
@@ -15,13 +15,13 @@ const Navbar = () => {
     <div className="w-full sticky top-0 z-50 bg-bodyColor mx-auto flex flex-col lg:flex-row justify-between items-center font-titleFont border-b-[1px] border-b-gray-600 px-4 ">
       {/* Left Side */}
       <div className="mb-4 lg:mb-0 lg:mr-8">
-        <a href="/" className="cursor-pointer">
+        <Link to="/" className="cursor-pointer">
           <img
             className="object-contain h-20 w-30 rounded-full"
             src={Nextlogo}
             alt="Logo"
           />
-        </a>
+        </Link>
       </div>
 
       {/* Right Side */}
@@ -30,19 +30,22 @@ const Navbar = () => {
           {navLinksdata.map(({ _id, title, link }) => (
             <li
               className="text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300"
-              key={_id}>
+              key={_id}
+            >
               <Link
                 activeClass="active"
                 to={link}
                 spy={true}
                 smooth={true}
                 offset={-100}
-                duration={500}>
+                duration={500}
+              >
                 <a
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block lg:inline-block">
+                  className="block lg:inline-block"
+                >
                   {title}
                 </a>
               </Link>
@@ -52,7 +55,8 @@ const Navbar = () => {
 
         <span
           onClick={() => setShowMenu(!showMenu)}
-          className="text-xl md:hidden bg-black w-10 h-10 inline-flex items-center justify-center rounded-full text-designColor cursor-pointer mb-4 lg:mb-0">
+          className="text-xl md:hidden bg-black w-10 h-10 inline-flex items-center justify-center rounded-full text-designColor cursor-pointer mb-4 lg:mb-0"
+        >
           <FiMenu />
         </span>
 
@@ -71,7 +75,8 @@ const Navbar = () => {
                 {navLinksdata.map((item) => (
                   <li
                     key={item._id}
-                    className="text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300">
+                    className="text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300"
+                  >
                     <Link
                       onClick={() => setShowMenu(false)}
                       activeClass="active"
@@ -79,7 +84,8 @@ const Navbar = () => {
                       spy={true}
                       smooth={true}
                       offset={-70}
-                      duration={500}>
+                      duration={500}
+                    >
                       {item.title}
                     </Link>
                   </li>
@@ -103,7 +109,8 @@ const Navbar = () => {
               </div>
               <span
                 onClick={() => setShowMenu(false)}
-                className="absolute top-4 right-4 text-gray-400 hover:text-designColor duration-300 text-2xl cursor-pointer">
+                className="absolute top-4 right-4 text-gray-400 hover:text-designColor duration-300 text-2xl cursor-pointer"
+              >
                 <MdClose />
               </span>
             </div>

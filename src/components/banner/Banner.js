@@ -9,7 +9,8 @@ const Banner = () => {
     <section className="w-full  py-3  items-center">
       <div
         className="w-full pt-10 pb-20 flex flex-row gap-10 xl:gap-0 justify-center
-       items-center font-titleFont">
+       items-center font-titleFont"
+      >
         <LeftBanner />
 
         <br></br>
