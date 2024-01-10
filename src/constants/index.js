@@ -25,7 +25,7 @@ export const navLinksdata = [
   {
     _id: 1005,
     title: "Testimonial",
-    link: "testimonial", // Absolute path
+    link: "/solutions", // Absolute path
   },
   {
     _id: 1006,
